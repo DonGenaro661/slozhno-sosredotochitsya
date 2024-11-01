@@ -2,31 +2,15 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
 :root {
-    --accent-color: #ff0070;
-    --page-padding: 20px;
-    --page-family: "IBM Plex Mono", sans-serif;
-    --page-font-size: 18px;
-    --page-line-height: 18px;
-    --header-title-font-size: 157px;
-    --header-title-line-height: 129.53px;
-    --title-font-size: 157px;
-    --title-line-height: 129.53px;
+  --main-font: "IBM Plex Mono", sans-serif;
+  --main-font-size: 1.125rem;
+  --main-line-height: 1.4625rem;
+  --title-font-size: 1.125rem;
+  --header-title-font-size: 9.813rem;
+  --header-title-line-height: 8.125rem;
+  --global-padding: 1.25rem;
 }
 
 
-/* 
-  
-  
-
-  --title-font-size: 1.125rem;
-  --title-line-height: 1.5rem;
-
-  --header-title-font-size: 9.813rem;
-  --header-title-line-height: 8.125rem;
-
-  --global-padding: 1.25rem; 
-  --font family: 'IBM Plex mon';
-  --main-font-size: 1.125rem;
-  --main-line-height: 1.5rem;
-  */

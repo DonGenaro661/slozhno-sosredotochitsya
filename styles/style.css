@@ -2,17 +2,21 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background-image: url(../images/cover-image-dark.png);
+  background-image: var(--page-background-image);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding: 20px;
+  background-color: var(--background-color);
+  padding: var(--global-padding);
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
 }
 
 .header {
   block-size: calc(100vh - 40px);
-  color: #f1b2ce;
   margin-block-end: 80px;
   display: grid;
   grid-template-rows: 1fr auto 1fr;
@@ -31,26 +35,18 @@
 }
 
 .header__theme-menu-button {
-  font-family: "IBM Plex Mono", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23px;
-  color: #ff0070;
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+  color: var(--default-color);
   text-align: center;
   padding: 0px 13px 3px;
   text-transform: lowercase;
-  background-color: transparent;
-  border: none;
 }
 
-/* .header__theme-menu-button_active {
+.header__theme-menu-button_active {
   outline: 1px solid var(--default-color);
   pointer-events: none;
 }
-
-.header__theme-menu-button_type_auto {
-
-} */
 
 .decorated-zone::before {
   position: absolute;
@@ -60,8 +56,8 @@
   background-color: transparent;
   inline-size: 25px;
   block-size: 25px;
-  border-top: 1px solid #ff0070;
-  border-right: 1px solid #ff0070;
+  border-block-start: 1px solid var(--default-color);
+  border-inline-end: 1px solid var(--default-color);
 }
 
 .decorated-zone::after {
@@ -71,26 +67,23 @@
   inset-block-end: 0px;
   background-color: transparent;
   inline-size: 25px;
-
   block-size: 25px;
-  border-bottom: 1px solid #ff0070;
-  border-left: 1px solid #ff0070;
+  border-block-end: 1px solid var(--default-color);
+  border-inline-start: 1px solid var(--default-color);
 }
 
-.rec::before {
+.rec-view::before {
   position: absolute;
   content: "rec";
-  font-family: "IBM Plex Mono", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: #ff0070;
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+  color: var(--default-color);
   text-transform: uppercase;
-  inset-block-start: 0px;
+  inset-block-start: 2px;
   inset-inline-end: 28px;
-  line-height: 25px;
   text-align: center;
 }
-.rec::after {
+.rec-view::after {
   display: flex;
   content: "";
   position: absolute;
@@ -99,26 +92,24 @@
   inline-size: 9px;
   block-size: 9px;
   border-radius: 50%;
-  background-color: #ff0070;
-  box-shadow: 0 0 4px 2px #ff0070;
+  background-color: var(--default-color);
+  box-shadow: 0 0 4px 2px var(--default-color);
 }
 
 .title {
-  font-family: "IBM Plex Mono", sans-serif;
-  font-size: 157px;
+  font-size: var(--header-title-font-size);
   font-weight: 700;
-  line-height: 129.53px;
-  color: #db00ff;
+  line-height: var(--header-title-line-height);
+  color: var(--header-title);
 }
 
 .header__title {
   grid-area: 2 / 1 / 3 / 2;
   margin-inline-start: -20px;
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--header-title-shadow);
 }
 
 .header__description {
-  font-family: "IBM Plex Mono", sans-serif;
   inline-size: 50%;
   justify-self: end;
   align-self: center;
@@ -126,10 +117,10 @@
 }
 
 .title-decor {
-  font-size: 18px;
+  font-size: var(--main-font-size);
   font-weight: 700;
-  color: #000028;
-  background-color: #ff0070;
+  color: var(--decor-color-text);
+  background-color: var(--decor-color-background);
   margin-block-end: 10px;
 }
 
@@ -138,11 +129,8 @@
 }
 
 .why {
-  color: #f1b2ce;
-  font-family: "IBM Plex mono", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
+  color: var(--text-color);
+  /* line-height: 23.4px; */
   text-align: left;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -151,9 +139,9 @@
 }
 
 .sections-title {
-  font-size: 18px;
+  font-size: var(--title-font-size);
   font-weight: 700;
-  color: #ff0070;
+  color: var(--title-color);
 }
 
 .why__content {
@@ -161,21 +149,9 @@
   gap: 20px;
 }
 
-.link {
-  color: currentColor;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .what {
-  color: #f1b2ce;
-  font-family: "IBM Plex mono", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
+  color: var(--text-color);
+  /* line-height: 23.4px; */
   text-align: left;
   display: grid;
   gap: 20px;
@@ -193,11 +169,8 @@
 }
 
 .how {
-  color: #f1b2ce;
-  font-family: "IBM Plex mono", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
+  color: var(--text-color);
+  /* line-height: 23.4px; */
   text-align: left;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -215,11 +188,8 @@
 }
 
 .may {
-  color: #f1b2ce;
-  font-family: "IBM Plex mono", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
+  color: var(--text-color);
+  /* line-height: 23.4px; */
   text-align: left;
   display: grid;
   margin-block-end: 80px;
@@ -268,12 +238,18 @@
 }
 
 .footer__title {
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--header-title-shadow);
 }
 
 
 
 @media (max-width: 1023px) {
+  
+  :root {
+    --header-title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    --header-title-line-height: clamp(6.1875rem, 0.375rem + 12.1094vw, 8.125rem);
+  }
+
   .header__theme-menu {
     justify-self: right;
     align-self: center;
@@ -282,11 +258,6 @@
   .header__theme-menu-list {
     display: flex;
     flex-direction: column;
-  }
-
-  .title {
-    font-size: 120px;
-    line-height: 99px;
   }
 
   .what__content {
@@ -306,8 +277,10 @@
 
 
 @media (max-width: 767px) {
-  .page {
-    padding: 10px;
+  :root {
+    --global-padding: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+    --header-title-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    --header-title-line-height: clamp(5.9375rem, 5.699rem + 1.0178vw, 6.1875rem);
   }
 
   .header {
@@ -315,10 +288,6 @@
     block-size: calc(100vh - 20px);
   }
 
-  .title {
-    font-size: 116px;
-    line-height: 95.7px;
-  }
 
   .header__title {
     margin-inline-start: 0px;

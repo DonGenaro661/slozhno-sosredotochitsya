@@ -17,6 +17,7 @@
 
 .header {
   block-size: calc(100vh - 40px);
+  min-block-size: calc(668px - 20px);
   margin-block-end: 80px;
   display: grid;
   grid-template-rows: 1fr auto 1fr;
@@ -130,7 +131,6 @@
 
 .why {
   color: var(--text-color);
-  /* line-height: 23.4px; */
   text-align: left;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -151,7 +151,6 @@
 
 .what {
   color: var(--text-color);
-  /* line-height: 23.4px; */
   text-align: left;
   display: grid;
   gap: 20px;
@@ -170,7 +169,6 @@
 
 .how {
   color: var(--text-color);
-  /* line-height: 23.4px; */
   text-align: left;
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -189,7 +187,6 @@
 
 .may {
   color: var(--text-color);
-  /* line-height: 23.4px; */
   text-align: left;
   display: grid;
   margin-block-end: 80px;
@@ -232,6 +229,7 @@
 
 .footer {
   block-size: calc(100vh - 40px);
+  min-block-size: calc(668px - 20px);
   display: grid;
   place-items: center;
   position: relative;

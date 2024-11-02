@@ -57,7 +57,7 @@ button:focus {
 }
 
 a:focus-visible {
-  outline: 1px solid var(--default-color);
+  outline: 1px solid var(--text-color);
 }
 
 button:focus-visible {
